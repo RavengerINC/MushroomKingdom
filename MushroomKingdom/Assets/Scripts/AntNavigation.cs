@@ -6,15 +6,9 @@ public class AntNavigation : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private GameObject mushroom;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private void Awake() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         mushroom = GameObject.Find("HeroMushroom");
-    }
-
-    private void Awake() {
-        
     }
 
     // Update is called once per frame
