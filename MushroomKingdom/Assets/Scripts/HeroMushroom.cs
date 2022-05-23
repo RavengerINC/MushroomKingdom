@@ -25,7 +25,7 @@ public class HeroMushroom : MonoBehaviour
     }
 
     public void TakeDamage() {
-        CurrentHealth -= Mathf.Min(Random.value, CurrentHealth / 4f);
+        CurrentHealth -= MaxHealth / 10f;
 
         healthBar.UpdateHealthBar();
     }
