@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.sidefx.vat": "file:C:/Program Files/Side Effects Software/sidefx_packages/SideFXLabs19.0/unity/shaders/URP_VAT3",
     "com.unity.cinemachine": "2.8.4",
     "com.unity.collab-proxy": "1.15.15",
     "com.unity.ide.rider": "3.0.13",
