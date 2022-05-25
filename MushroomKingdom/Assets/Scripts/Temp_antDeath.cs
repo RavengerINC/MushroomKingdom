@@ -1,12 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class AntActions : MonoBehaviour
+public class Temp_antDeath : MonoBehaviour
 {
     [SerializeField] private GameObject deadAntPrefab;
     [SerializeField] private ParticleSystem explosionParticles;
 
-    public void KillAnt() {
+    public void ExplodeAnt()
+    {
         StartCoroutine(explode());
     }
 
