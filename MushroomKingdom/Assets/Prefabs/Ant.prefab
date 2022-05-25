@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 6565673129567243145}
   - component: {fileID: 6565673129567243158}
   - component: {fileID: 6565673129567243149}
+  - component: {fileID: 3089773937935151476}
   - component: {fileID: 6565673129567243148}
   m_Layer: 0
   m_Name: Ant
-  m_TagString: Untagged
+  m_TagString: AntGrunt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +135,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19e13a32c49112f448c1b77c4cc45daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3089773937935151476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565673129567243159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996917ca7c677944cb508a29d4b05941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &6565673129567243148
