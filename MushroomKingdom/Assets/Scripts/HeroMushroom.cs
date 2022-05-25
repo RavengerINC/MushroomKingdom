@@ -7,23 +7,29 @@ public class HeroMushroom : MonoBehaviour
     [SerializeField]
     public float MaxHealth;
 
-    [SerializeField]
     public float CurrentHealth;
 
+    [SerializeField]
+    public float MaxEnergy;
+
+    public float CurrentEnergy;
+
     public HealthBar healthBar;
+    public EnergyBar energyBar;
 
     // Start is called before the first frame update
     void Awake()
     {
-
+        CurrentHealth = MaxHealth;
+        CurrentEnergy = MaxEnergy;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            TakeDamage();
-        }
+        var dt = Time.deltaTime;
+        CurrentEnergy = Mathf.Clamp(CurrentEnergy + (5.0f * dt), 0, MaxEnergy);
+        energyBar.UpdateEnergyBar();
     }
 
     public void TakeDamage() {
@@ -48,5 +54,10 @@ public class HeroMushroom : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ShroomSpawned() {
+        CurrentEnergy = Mathf.Clamp(CurrentEnergy - 5.0f, 0f, MaxEnergy);
+        energyBar.UpdateEnergyBar();
     }
 }

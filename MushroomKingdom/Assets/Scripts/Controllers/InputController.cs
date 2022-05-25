@@ -8,6 +8,8 @@ public class InputController : MonoBehaviour
     int rayDistance = 300;
     public GameObject shroomPrefab;
 
+    public GameObject heroShroom;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +32,10 @@ public class InputController : MonoBehaviour
         {
             //On left click spawn selected prefab and align its rotation to a surface normal
             Vector3[] spawnData = GetClickPositionAndNormal();
-            if(spawnData[0] != Vector3.zero)
+            if(spawnData[0] != Vector3.zero && heroShroom.GetComponent<HeroMushroom>().CurrentEnergy >= 5.0f)
             {
                 Instantiate(shroomPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
+                heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
             }
         }
     }
