@@ -7,6 +7,10 @@ public class EnergyBar : MonoBehaviour
     public Image healthBarImage;
     public HeroMushroom heroShroom;
 
+    public void Awake() {
+        DOTween.SetTweensCapacity(500, 50);
+    }
+
     public void UpdateEnergyBar() {
         float duration = 0.75f * (heroShroom.CurrentEnergy / heroShroom.MaxEnergy);
 
