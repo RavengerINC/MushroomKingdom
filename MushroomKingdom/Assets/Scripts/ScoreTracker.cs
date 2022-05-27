@@ -1,29 +1,41 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ScoreTracker : MonoBehaviour
 {
-    public int Score;
+    [SerializeField] private int m_score;
 
-    // Start is called before the first frame update
-    void Start()
+    private TMP_Text m_scoreText;
+
+    public static ScoreTracker Instance { get; private set; }
+
+    private void Awake()
     {
-        Score = 0;
-        var tmpText = gameObject.GetComponent<TMP_Text>();
-        tmpText.text = "0";
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        m_scoreText = GetComponentInChildren<TMP_Text>();
+        m_score = 0;
+        UpdateText();
     }
 
-    public void AntKilled() {
-        Score += 10;
-        var tmpText = gameObject.GetComponent<TMP_Text>();
-        tmpText.text = $"{Score}";
+    public void IncrementScore(int amount)
+    {
+        m_score += amount;
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
+        m_scoreText.text = $"{m_score}";
     }
 }
