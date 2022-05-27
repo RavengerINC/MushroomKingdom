@@ -19,7 +19,7 @@ public class MushroomGrowth : MonoBehaviour
     [SerializeField] float m_explosionRadiusMax = 5.0f;
     [SerializeField] float m_explosionRadiusMin = 1.0f;
     [SerializeField] float m_growthDuration = 5.0f;
-    [SerializeField] float m_maxScale = 3.0f;
+    //[SerializeField] float m_maxScale = 3.0f;
 
     private float m_startTime;
     private float m_growthPercent;
