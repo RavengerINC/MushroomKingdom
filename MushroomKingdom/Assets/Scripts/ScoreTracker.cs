@@ -11,6 +11,8 @@ public class ScoreTracker : MonoBehaviour
     void Start()
     {
         Score = 0;
+        var tmpText = gameObject.GetComponent<TMP_Text>();
+        tmpText.text = "0";
     }
 
     // Update is called once per frame
@@ -22,6 +24,6 @@ public class ScoreTracker : MonoBehaviour
     public void AntKilled() {
         Score += 10;
         var tmpText = gameObject.GetComponent<TMP_Text>();
-        tmpText.text = Score.ToString();
+        tmpText.text = $"{Score}";
     }
 }
