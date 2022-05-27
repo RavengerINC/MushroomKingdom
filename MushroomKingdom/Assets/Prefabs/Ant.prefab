@@ -101,6 +101,22 @@ MonoBehaviour:
     type: 3}
   explosionParticles: {fileID: 5742371337554803391, guid: c64131b5c237f8947a7cc828e9f84da8,
     type: 3}
+  AntKilledEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4827229837942443068, guid: 4805086b9fe096542914acfd0cfebccd,
+          type: 3}
+        m_TargetAssemblyTypeName: ScoreTracker, Assembly-CSharp
+        m_MethodName: AntKilled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!54 &6565673129567243148
 Rigidbody:
   m_ObjectHideFlags: 0
