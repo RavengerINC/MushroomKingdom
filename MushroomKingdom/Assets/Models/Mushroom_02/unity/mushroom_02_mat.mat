@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2771193348711193374
+--- !u!114 &-941632653153462894
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mushroom_01_mat
+  m_Name: mushroom_02_mat
   m_Shader: {fileID: -6465566751694194690, guid: 0b2280f4fe5a4cd489361a76ef3c0274,
     type: 3}
   m_ValidKeywords:
@@ -76,15 +76,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _colTexture:
-        m_Texture: {fileID: 2800000, guid: b2b16b1ba0e6f8940b1bd8cfdea84abd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dcc3439ebf4e36459ad263f2f33fc17, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: be97bd6d47061ae49a2ce2f8d89ca057, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3ea3b449f20c4454792681e3834357ba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _posTexture:
-        m_Texture: {fileID: 2800000, guid: 5b94da67880a40549a3414e8c10df068, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0b4c0109b37e0bb4f83e93dbd69b0ef4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _posTexture2:
@@ -92,7 +92,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _rotTexture:
-        m_Texture: {fileID: 2800000, guid: e3e2a23030938804f9c9abc80d62412a, type: 3}
+        m_Texture: {fileID: 2800000, guid: c231ed29394c01f4ba0e43fcd074bf09, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _spareColTexture:
@@ -141,15 +141,15 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _boundMaxX: 0.1
-    - _boundMaxY: 1.2
-    - _boundMaxZ: 0.25
-    - _boundMinX: -0.4
+    - _boundMaxX: 0.6
+    - _boundMaxY: 1.4
+    - _boundMaxZ: 0.75
+    - _boundMinX: -0.8
     - _boundMinY: -0.101
-    - _boundMinZ: -0.2
+    - _boundMinZ: -0.7
     - _displayFrame: 24
     - _frameCount: 24
-    - _gameTimeAtFirstFrame: 1
+    - _gameTimeAtFirstFrame: 0
     - _houdiniFPS: 24
     - _playbackSpeed: 1
     m_Colors:

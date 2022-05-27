@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
@@ -7,6 +6,8 @@ public class InputController : MonoBehaviour
     Camera c;
     int rayDistance = 300;
     public GameObject shroomPrefab;
+    [SerializeField] private GameObject shroomSuperPrefab;
+    [SerializeField] private float corpseRange = 3.0f;
 
     public GameObject heroShroom;
 
@@ -34,8 +35,26 @@ public class InputController : MonoBehaviour
             Vector3[] spawnData = GetClickPositionAndNormal();
             if(spawnData[0] != Vector3.zero && heroShroom.GetComponent<HeroMushroom>().CurrentEnergy >= 5.0f)
             {
-                Instantiate(shroomPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
-                heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
+                // Find any ant corpses around the spawn point
+                GameObject[] nearCorpses = GetSurroundingAntCorpses(spawnData[0]);
+
+                if (nearCorpses.Length > 0)
+                {
+                    // Spawn super shroom prefab
+                    Instantiate(shroomSuperPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
+                    heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
+
+                    // Remove all used corpses
+                    foreach(GameObject corpse in nearCorpses)
+                    {
+                        corpse.GetComponent<AntCorpseActions>().RemoveCorpse();
+                    }
+                }
+                else
+                {
+                    Instantiate(shroomPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
+                    heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
+                }
             }
         }
     }
@@ -68,5 +87,11 @@ public class InputController : MonoBehaviour
         }
 
         return null;
+    }
+
+    private GameObject[] GetSurroundingAntCorpses(Vector3 centre)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(centre, corpseRange);
+        return hitColliders.Where(hc => hc.gameObject.CompareTag("AntCorpse")).Select(hc => hc.gameObject).ToArray();
     }
 }
