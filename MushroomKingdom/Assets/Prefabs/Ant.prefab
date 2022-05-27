@@ -48,8 +48,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.75
-  m_Height: 1
-  m_Direction: 1
+  m_Height: 2.25
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &6565673129567243158
 NavMeshAgent:
@@ -97,26 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996917ca7c677944cb508a29d4b05941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreAmount: 10
   deadAntPrefab: {fileID: 6565673129567243159, guid: 72e17dcc618a0c74da8f76f33a025045,
     type: 3}
   explosionParticles: {fileID: 5742371337554803391, guid: c64131b5c237f8947a7cc828e9f84da8,
     type: 3}
-  AntKilledEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4827229837942443068, guid: 4805086b9fe096542914acfd0cfebccd,
-          type: 3}
-        m_TargetAssemblyTypeName: ScoreTracker, Assembly-CSharp
-        m_MethodName: AntKilled
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
 --- !u!54 &6565673129567243148
 Rigidbody:
   m_ObjectHideFlags: 0
