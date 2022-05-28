@@ -102,6 +102,8 @@ MonoBehaviour:
     type: 3}
   explosionParticles: {fileID: 5742371337554803391, guid: c64131b5c237f8947a7cc828e9f84da8,
     type: 3}
+  splatProjector: {fileID: 8201143290731690321, guid: 3da7b4325ca1e104cb658962a8222210,
+    type: 3}
 --- !u!54 &6565673129567243148
 Rigidbody:
   m_ObjectHideFlags: 0

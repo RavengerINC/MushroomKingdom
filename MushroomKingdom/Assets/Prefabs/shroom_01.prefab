@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6322656178222745978}
   - component: {fileID: 1655526285928147329}
   - component: {fileID: 1882966649235027498}
+  - component: {fileID: 4282239689843688272}
   m_Layer: 0
   m_Name: shroom_01
   m_TagString: ExplodingShroom
@@ -63,8 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_explosionRadiusMax: 5
   m_explosionRadiusMin: 1
-  m_growthDuration: 5
-  m_maxScale: 2.5
+  m_growthDuration: 4
 --- !u!114 &1882966649235027498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +77,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88ce9ae71e5a314caf044ec0603b27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &4282239689843688272
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247441605553580888}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6030245428518058281
 PrefabInstance:
   m_ObjectHideFlags: 0
