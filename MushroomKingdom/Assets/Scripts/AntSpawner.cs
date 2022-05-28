@@ -5,10 +5,15 @@ public class AntSpawner : MonoBehaviour
 {
     public GameObject antPrefab;
     public GameObject antNest;
+    private float antsPerSecond;
+
+    void Awake() {
+        antsPerSecond = 0.1f;
+    }
 
     void Start()
     {
-        StartTimer(4);
+        StartTimer(1 / antsPerSecond);
     }
 
     public void StartTimer(float duration)

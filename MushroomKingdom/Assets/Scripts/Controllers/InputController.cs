@@ -38,32 +38,22 @@ public class InputController : MonoBehaviour
             if (!Physics.Raycast(ray, out hit, rayDistance))
                 return;
 
-            // return if click lands on something other than ground
-            if (!hit.transform.CompareTag("Ground"))
-                return;
-
             //On left click spawn selected prefab and align its rotation to a surface normal
             Vector3[] spawnData = GetClickPositionAndNormal(hit);
 
 
             if(spawnData[0] != Vector3.zero && heroShroom.GetComponent<HeroMushroom>().CurrentEnergy >= 5.0f)
             {
-                // Find any ant corpses around the spawn point
-                GameObject[] nearCorpses = GetSurroundingAntCorpses(spawnData[0]);
-
-                if (nearCorpses.Length > 0)
-                {
-                    // Spawn super shroom prefab
+                if (hit.transform.CompareTag("AntCorpse")) {
                     GameObject shroom = Instantiate(shroomSuperPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
                     shroom.transform.RotateAround(spawnData[0], spawnData[1], Random.Range(0, 360));
                     heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
 
-                    // Remove all used corpses
-                    foreach(GameObject corpse in nearCorpses)
-                    {
-                        corpse.GetComponent<AntCorpseActions>().RemoveCorpse();
-                    }
+                    hit.transform.gameObject.GetComponent<AntCorpseActions>().RemoveCorpse();
                 }
+                // return if click lands on something other than ground
+                else if (!hit.transform.CompareTag("Ground"))
+                    return;
                 else
                 {
                     GameObject shroom = Instantiate(shroomPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
