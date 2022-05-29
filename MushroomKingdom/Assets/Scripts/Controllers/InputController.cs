@@ -45,8 +45,10 @@ public class InputController : MonoBehaviour
             if(spawnData[0] != Vector3.zero && heroShroom.GetComponent<HeroMushroom>().CurrentEnergy >= 5.0f)
             {
                 if (hit.transform.CompareTag("AntCorpse")) {
-                    GameObject shroom = Instantiate(shroomSuperPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
-                    shroom.transform.RotateAround(spawnData[0], spawnData[1], Random.Range(0, 360));
+                    // GameObject shroom = Instantiate(shroomSuperPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
+                    GameObject shroom = Instantiate(shroomSuperPrefab, spawnData[0], Quaternion.Euler(0, 1, 0));
+                    // shroom.transform.RotateAround(spawnData[0], spawnData[1], Random.Range(0, 360));
+                    shroom.transform.RotateAround(spawnData[0], Vector3.up, Random.Range(0, 360));
                     heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
 
                     hit.transform.gameObject.GetComponent<AntCorpseActions>().RemoveCorpse();
@@ -56,8 +58,8 @@ public class InputController : MonoBehaviour
                     return;
                 else
                 {
-                    GameObject shroom = Instantiate(shroomPrefab, spawnData[0], Quaternion.FromToRotation(shroomPrefab.transform.up, spawnData[1]));
-                    shroom.transform.RotateAround(spawnData[0], spawnData[1], Random.Range(0, 360));
+                    GameObject shroom = Instantiate(shroomPrefab, spawnData[0], Quaternion.Euler(0, 1, 0));
+                    shroom.transform.RotateAround(spawnData[0], Vector3.up, Random.Range(0, 360));
                     heroShroom.GetComponent<HeroMushroom>().ShroomSpawned();
                 }
             }
