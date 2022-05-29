@@ -100,3 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6632c74147c38964db252cab150fe8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_decalProjector: {fileID: 5283690517622787996}
+  m_duration: 10
